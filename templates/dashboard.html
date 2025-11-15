@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - AirAware</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav>
+        <h2>AirAware</h2>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a class="active" href="/dashboard">Dashboard</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ===================== DASHBOARD CONTENT ===================== -->
+    <div class="dashboard-container">
+
+        <!-- Page Title -->
+        <h1 class="dashboard-title">Air Quality Dashboard</h1>
+        <p class="dashboard-sub">Enter your location to get AQI prediction</p>
+
+        <!-- ===================== LOCATION INPUT ===================== -->
+        <div class="location-box">
+            <input type="text" id="locationInput" placeholder="Enter location...">
+            <button onclick="predictAQI()">Check AQI</button>
+        </div>
+
+        <!-- ===================== PRESENT AQI CARDS ===================== -->
+        <div class="aqi-cards">
+
+            <div class="aqi-card">
+                <h3>PM2.5</h3>
+                <p id="pm25">--</p>
+            </div>
+
+            <div class="aqi-card">
+                <h3>CO₂</h3>
+                <p id="co2">--</p>
+            </div>
+
+            <div class="aqi-card">
+                <h3>NO₂</h3>
+                <p id="no2">--</p>
+            </div>
+
+            <div class="aqi-card">
+                <h3>Current AQI</h3>
+                <p id="aqi">--</p>
+            </div>
+
+        </div>
+
+        <!-- ===================== LAST YEAR AVERAGE ===================== -->
+        <div class="avg-box">
+            <h3>Last Year Average</h3>
+            <p id="avg-pm25">PM2.5: --</p>
+            <p id="avg-co2">CO₂: --</p>
+            <p id="avg-no2">NO₂: --</p>
+        </div>
+
+        <!-- ===================== CHARTS SECTION ===================== -->
+        <div class="charts-row">
+
+            <!-- Line Chart -->
+            <div class="chart-box">
+                <canvas id="lineChart"></canvas>
+            </div>
+
+            <!-- Bar Chart -->
+            <div class="chart-box">
+                <canvas id="barChart"></canvas>
+            </div>
+
+        </div>
+
+        <!-- PDF Download Button -->
+        <br><br>
+        <button class="pdf-btn" onclick="downloadPDF()">Download AQI Report</button>
+
+    </div> <!-- /dashboard-container -->
+
+    <!-- ===================== JAVASCRIPT ===================== -->
+    <!-- Chart.js library FIRST -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Custom JS files -->
+    <script src="/static/js/charts.js"></script>
+    <script src="/static/js/pdf.js"></script>
+
+</body>
+</html>

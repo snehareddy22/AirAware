@@ -1,0 +1,488 @@
+/* =========================================================
+   GLOBAL STYLES
+   ========================================================= */
+
+/* Reset browser defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global beautiful font */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+nav {
+    background-color: #1bb1e5;
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h2 {
+    font-size: 28px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    text-decoration: underline;
+}
+
+
+
+/* =========================================================
+   HOME PAGE
+   ========================================================= */
+
+/* Background hero section */
+.hero-section {
+    background-image: url("/static/images/background.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* White box in hero section */
+.hero-box {
+    background-color: white;
+    padding: 30px 40px;
+    text-align: center;
+    border-radius: 12px;
+    width: 350px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Hero button */
+.hero-box button {
+    background-color: #1bb1e5;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.hero-box button:hover {
+    background-color: #158fb9;
+}
+
+
+
+/* =========================================================
+   ABOUT PAGE
+   ========================================================= */
+
+.about-container {
+    padding: 40px 60px;
+}
+
+.about-title {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 36px;
+}
+
+.about-subtitle {
+    text-align: center;
+    color: #444;
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+
+/* Box layout - 3 per row */
+.about-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.about-box {
+    width: 25%;
+    min-height: 450px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0px 6px 20px rgba(0,0,0,0.15);
+    text-align: center;
+
+    transition: 0.3s ease;
+}
+
+/* Hover effect */
+.about-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.25);
+}
+
+/* Bullet list inside boxes */
+.about-box ul {
+    text-align: left;
+    padding-left: 20px;
+    color: #444;
+    line-height: 1.7;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.about-box li {
+    margin-bottom: 10px;
+}
+
+/* Extra white section below */
+.extra-section {
+    margin: 60px auto;
+    width: 80%;
+    background-color: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0px 6px 20px rgba(0,0,0,0.15);
+    text-align: center;
+    line-height: 1.8;
+}
+
+.extra-section h2 {
+    color: #1bb1e5;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.extra-section p {
+    color: #444;
+    font-size: 17px;
+}
+
+
+
+/* =========================================================
+   CONTACT PAGE
+   ========================================================= */
+
+.contact-container {
+    padding: 40px 60px;
+    text-align: center;
+}
+
+.contact-container h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.contact-subtitle {
+    color: #444;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+/* Form container */
+.contact-box {
+    width: 40%;
+    margin: auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0px 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Form labels */
+.contact-box label {
+    display: block;
+    margin-top: 15px;
+    text-align: left;
+}
+
+/* Input / textarea */
+.contact-box input,
+.contact-box textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.contact-box textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* Send button */
+.contact-box button {
+    background-color: #1bb1e5;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.contact-box button:hover {
+    background-color: #158fb9;
+}
+
+
+
+/* =========================================================
+   AQI TABLE SECTION
+   ========================================================= */
+
+.aqi-table-section {
+    width: 90%;
+    margin: 60px auto;
+    text-align: center;
+}
+
+.aqi-table-section h2 {
+    color: #1bb1e5;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+/* Table */
+.aqi-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    box-shadow: 0px 6px 20px rgba(0,0,0,0.15);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.aqi-table td {
+    padding: 18px 15px;
+    text-align: left;
+    color: #333;
+}
+
+/* Row colors */
+.good { background-color: #9ae79a; }
+.moderate { background-color: #f7e97d; }
+.usg { background-color: #ffcc99; }
+.unhealthy { background-color: #ff7070; color: white; }
+.very-unhealthy { background-color: #b56bcc; color: white; }
+.hazardous { background-color: #8a3a3a; color: white; }
+
+/* First column bold */
+.aqi-table tr td:first-child {
+    font-weight: 600;
+}
+
+
+
+/* =========================================================
+   DASHBOARD PAGE
+   ========================================================= */
+
+.dashboard-container {
+    padding: 40px 60px;
+    text-align: center;
+}
+
+.dashboard-title {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.dashboard-sub {
+    color: #444;
+    margin-bottom: 25px;
+}
+
+/* Location input area */
+.location-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 20px auto;
+    width: 100%;
+}
+
+.location-box input {
+    width: 350px;
+    padding: 12px 15px;
+    border-radius: 12px;
+    border: 1px solid #aaa;
+}
+
+.location-box button {
+    background-color: #1bb1e5;
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* AQI cards */
+.aqi-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.aqi-card {
+    width: 22%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+.aqi-card p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Last year average box */
+.avg-box {
+    width: 40%;
+    margin: 0 auto 40px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
+}
+
+/* Chart wrapper */
+.charts-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* Individual chart container */
+.chart-box {
+    width: 45%;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
+}
+
+.chart-box canvas {
+    width: 100% !important;
+    height: 250px !important;
+}
+
+/* PDF button */
+.pdf-btn {
+    background-color: #1bb1e5;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.pdf-btn:hover {
+    background-color: #158fb9;
+}
+
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* Navbar column */
+    nav {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Home */
+    .hero-box {
+        width: 80%;
+        padding: 20px;
+    }
+
+    /* About */
+    .about-boxes {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .about-box {
+        width: 90%;
+    }
+
+    /* Contact */
+    .contact-box {
+        width: 90%;
+    }
+
+    /* Dashboard */
+    .aqi-cards {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .aqi-card {
+        width: 80%;
+    }
+
+    .avg-box {
+        width: 90%;
+    }
+
+    /* Charts stacked */
+    .charts-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .chart-box {
+        width: 90%;
+    }
+}
