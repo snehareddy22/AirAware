@@ -49,7 +49,7 @@ nav ul li a {
     font-size: 18px;
 }
 
-nav ul li a:hover,
+nav ul li a:hover,          /*Highlights page you're on*/
 nav ul li a.active {
     text-decoration: underline;
 }
@@ -309,6 +309,8 @@ nav ul li a.active {
    DASHBOARD PAGE
    ========================================================= */
 
+/* ---------------- DASHBOARD PAGE ---------------- */
+
 .dashboard-container {
     padding: 40px 60px;
     text-align: center;
@@ -324,7 +326,7 @@ nav ul li a.active {
     margin-bottom: 25px;
 }
 
-/* Location input area */
+/* Location input */
 .location-box {
     display: flex;
     justify-content: center;
@@ -372,7 +374,7 @@ nav ul li a.active {
     font-weight: bold;
 }
 
-/* Last year average box */
+/* Avg box */
 .avg-box {
     width: 40%;
     margin: 0 auto 40px auto;
@@ -382,7 +384,7 @@ nav ul li a.active {
     box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
 }
 
-/* Chart wrapper */
+/* Charts */
 .charts-row {
     display: flex;
     justify-content: center;
@@ -391,7 +393,6 @@ nav ul li a.active {
     margin-top: 30px;
 }
 
-/* Individual chart container */
 .chart-box {
     width: 45%;
     background: white;
@@ -404,8 +405,6 @@ nav ul li a.active {
     width: 100% !important;
     height: 250px !important;
 }
-
-/* PDF button */
 .pdf-btn {
     background-color: #1bb1e5;
     color: white;
@@ -419,9 +418,6 @@ nav ul li a.active {
 .pdf-btn:hover {
     background-color: #158fb9;
 }
-
-
-
 /* =========================================================
    RESPONSIVE DESIGN
    ========================================================= */
