@@ -12,14 +12,21 @@
 
     <!-- ===================== NAVBAR ===================== -->
     <nav>
-        <h2>AirAware</h2>
+    <h2>AirAware</h2>
+
+    <div class="nav-right">
         <ul>
-         <li><a href="/">Home</a></li>
-        <li><a class="active" href="/dashboard">Dashboard</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
         </ul>
-    </nav>
+
+        <!-- dark-mode button RIGHT side -->
+        <button id="darkModeBtn" class="dark-toggle">🌙</button>
+    </div>
+</nav>
+
 
     <!-- ===================== DASHBOARD CONTENT ===================== -->
     <div class="dashboard-container">
@@ -95,6 +102,7 @@
     <!-- Custom JS files -->
     <script src="/static/js/charts.js"></script>
     <script src="/static/js/pdf.js"></script>
-
+    <script src="/static/js/script.js"></script>
 </body>
 </html>
+

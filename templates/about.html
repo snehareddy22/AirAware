@@ -10,16 +10,22 @@
 
 <body>
 
-    <!-- ===================== NAVBAR ===================== -->
     <nav>
-        <h2>AirAware</h2>
+    <h2>AirAware</h2>
+
+    <div class="nav-right">
         <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/dashboard">Dashboard</a></li>
-        <li><a class="active" href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
         </ul>
-    </nav>
+
+        <!-- dark-mode button RIGHT side -->
+        <button id="darkModeBtn" class="dark-toggle">🌙</button>
+    </div>
+</nav>
+
 
     <!-- ===================== ABOUT MAIN CONTENT ===================== -->
     <div class="about-container">
@@ -84,51 +90,44 @@
 
     </div> <!-- /about-container -->
 
+   <div class="aqi-table-wrapper">
+    <h2>Air Quality Index (AQI) Categories</h2>
 
-    <!-- ===================== AQI TABLE SECTION ===================== -->
-    <div class="aqi-table-section">
-        <h2>Air Quality Index (AQI) Categories</h2>
+    <table class="aqi-table">
+        <tr>
+            <td>0–50</td>
+            <td>Good</td>
+            <td>Air quality is satisfactory and poses little or no risk.</td>
+        </tr>
+        <tr>
+            <td>51–100</td>
+            <td>Moderate</td>
+            <td>Acceptable; may be a risk for sensitive individuals.</td>
+        </tr>
+        <tr>
+            <td>101–150</td>
+            <td>Unhealthy for Sensitive Groups</td>
+            <td>Sensitive groups may experience effects.</td>
+        </tr>
+        <tr>
+            <td>151–200</td>
+            <td>Unhealthy</td>
+            <td>Everyone may begin to experience symptoms.</td>
+        </tr>
+        <tr>
+            <td>201–300</td>
+            <td>Very Unhealthy</td>
+            <td>Health alert; everyone should limit outdoor activity.</td>
+        </tr>
+        <tr>
+            <td>301+</td>
+            <td>Hazardous</td>
+            <td>Serious health effects; avoid going outdoors.</td>
+        </tr>
+    </table>
+</div>
 
-        <table class="aqi-table">
 
-            <tr class="good">
-                <td>0–50</td>
-                <td>Good</td>
-                <td>Air quality is satisfactory and poses little or no risk.</td>
-            </tr>
-
-            <tr class="moderate">
-                <td>51–100</td>
-                <td>Moderate</td>
-                <td>Acceptable; may be a risk for sensitive individuals.</td>
-            </tr>
-
-            <tr class="usg">
-                <td>101–150</td>
-                <td>Unhealthy for Sensitive Groups</td>
-                <td>Sensitive groups may experience effects; general public unlikely to be affected.</td>
-            </tr>
-
-            <tr class="unhealthy">
-                <td>151–200</td>
-                <td>Unhealthy</td>
-                <td>Everyone may begin to feel effects; sensitive groups may feel more serious effects.</td>
-            </tr>
-
-            <tr class="very-unhealthy">
-                <td>201–300</td>
-                <td>Very Unhealthy</td>
-                <td>Health warnings; everyone should reduce outdoor exertion.</td>
-            </tr>
-
-            <tr class="hazardous">
-                <td>301+</td>
-                <td>Hazardous</td>
-                <td>Serious health effects; everyone should avoid outdoor activity.</td>
-            </tr>
-
-        </table>
-    </div>
     <script src="/static/js/script.js"></script>
 </body>
 </html>

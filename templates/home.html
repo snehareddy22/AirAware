@@ -9,31 +9,36 @@
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <!-- NAVBAR START -->
     <nav>
-        <h2>AirAware</h2>
-        
+    <h2>AirAware</h2>
+
+    <div class="nav-right">
         <ul>
-        <li><a class="active" href="/">Home</a></li>
-        <li><a href="/dashboard">Dashboard</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
         </ul>
 
-    </nav>
+        <!-- dark-mode button RIGHT side -->
+        <button id="darkModeBtn" class="dark-toggle">🌙</button>
+    </div>
+</nav>
+
+
     <!-- NAVBAR END -->
     <!-- HERO SECTION START -->
-    <div class="hero-section">      <!-- background image-->
-        <div class="hero-box">
-            <h1>Welcome to AirAware</h1>
-            <p>Your smart air quality prediction system.</p>
-            <a href="/dashboard">
+   <div class="hero-section-no-image">
+    <div class="hero-box">
+        <h1>Welcome to AirAware</h1>
+        <p>Your smart air quality prediction system.</p>
+        <a href="/dashboard">
             <button>Predict Now</button>
-            </a>
-        </div>
+        </a>
     </div>
+</div>
+
     <!-- HERO SECTION END -->
     <script src="/static/js/script.js"></script>
 </body>
 </html>
-

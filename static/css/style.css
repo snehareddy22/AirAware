@@ -1,29 +1,9 @@
-/* =========================================================
-   GLOBAL STYLES
-   ========================================================= */
+/* ========================= GLOBAL ========================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; }
+h1, h2, h3 { font-weight: 600; }
 
-/* Reset browser defaults */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Global beautiful font */
-body {
-    font-family: 'Poppins', sans-serif;
-}
-
-/* Headings */
-h1, h2, h3 {
-    font-weight: 600;
-}
-
-
-/* =========================================================
-   NAVBAR
-   ========================================================= */
-
+/* ========================= NAVBAR ========================= */
 nav {
     background-color: #1bb1e5;
     color: white;
@@ -32,57 +12,56 @@ nav {
     justify-content: space-between;
     align-items: center;
 }
+nav h2 { font-size: 28px; }
+nav ul { list-style: none; display: flex; gap: 30px; }
+nav ul li a { color: white; text-decoration: none; font-size: 18px; }
+nav ul li a:hover,
+nav ul li a.active { text-decoration: underline; }
 
-nav h2 {
-    font-size: 28px;
-}
-
-nav ul {
-    list-style: none;
+.nav-right {
     display: flex;
-    gap: 30px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-nav ul li a:hover,          /*Highlights page you're on*/
-nav ul li a.active {
-    text-decoration: underline;
-}
-
-
-
-/* =========================================================
-   HOME PAGE
-   ========================================================= */
-
-/* Background hero section */
-.hero-section {
-    background-image: url("/static/images/background.jpg");
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-
-    display: flex;
-    justify-content: center;
     align-items: center;
+    gap: 15px;
+}
+.dark-toggle {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: white;
 }
 
-/* White box in hero section */
+/* ========================= HOME PAGE ========================= */
+.hero-section-no-image {
+    background: linear-gradient(180deg, #f7fbff 0%, #ffffff 100%);
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
 .hero-box {
     background-color: white;
     padding: 30px 40px;
     text-align: center;
-    border-radius: 12px;
-    width: 350px;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    border-radius: 14px;
+    width: 380px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
 }
 
-/* Hero button */
+.hero-box h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #0b2540;
+}
+
+.hero-box p {
+    color: #475569;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
 .hero-box button {
     background-color: #1bb1e5;
     color: white;
@@ -91,44 +70,22 @@ nav ul li a.active {
     font-size: 16px;
     border-radius: 8px;
     cursor: pointer;
-    margin-top: 20px;
 }
 
 .hero-box button:hover {
     background-color: #158fb9;
 }
+/* ========================= ABOUT PAGE ========================= */
+.about-container { padding: 40px 60px; }
+.about-title { text-align: center; margin-bottom: 10px; font-size: 36px; }
+.about-subtitle { text-align: center; color: #444; margin-bottom: 40px; }
 
-
-
-/* =========================================================
-   ABOUT PAGE
-   ========================================================= */
-
-.about-container {
-    padding: 40px 60px;
-}
-
-.about-title {
-    text-align: center;
-    margin-bottom: 10px;
-    font-size: 36px;
-}
-
-.about-subtitle {
-    text-align: center;
-    color: #444;
-    margin-bottom: 40px;
-    font-size: 18px;
-}
-
-/* Box layout - 3 per row */
 .about-boxes {
     display: flex;
     justify-content: center;
     gap: 40px;
     margin-top: 30px;
 }
-
 .about-box {
     width: 25%;
     min-height: 450px;
@@ -137,31 +94,19 @@ nav ul li a.active {
     border-radius: 16px;
     box-shadow: 0px 6px 20px rgba(0,0,0,0.15);
     text-align: center;
-
     transition: 0.3s ease;
 }
-
-/* Hover effect */
 .about-box:hover {
     transform: translateY(-8px);
     box-shadow: 0px 10px 25px rgba(0,0,0,0.25);
 }
-
-/* Bullet list inside boxes */
 .about-box ul {
     text-align: left;
     padding-left: 20px;
     color: #444;
     line-height: 1.7;
-    font-size: 15px;
-    margin-top: 15px;
 }
-
-.about-box li {
-    margin-bottom: 10px;
-}
-
-/* Extra white section below */
+/* Extra white section below (Why AirAware Matters) */
 .extra-section {
     margin: 60px auto;
     width: 80%;
@@ -173,40 +118,48 @@ nav ul li a.active {
     line-height: 1.8;
 }
 
+/* Heading inside the box */
 .extra-section h2 {
     color: #1bb1e5;
     margin-bottom: 20px;
     font-size: 28px;
 }
 
+/* Paragraph text */
 .extra-section p {
     color: #444;
     font-size: 17px;
+    line-height: 1.6;
 }
 
-
-
-/* =========================================================
-   CONTACT PAGE
-   ========================================================= */
-
-.contact-container {
-    padding: 40px 60px;
+/* ========================= AQI TABLE ========================= */
+.aqi-table-wrapper {
+    width: 70%;
+    margin: 50px auto;
     text-align: center;
 }
-
-.contact-container h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
+.aqi-table-wrapper h2 {
+    color: #1bb1e5;
+    font-size: 28px;
+    margin-bottom: 20px;
 }
-
-.contact-subtitle {
-    color: #444;
-    font-size: 18px;
-    margin-bottom: 40px;
+.aqi-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.1);
 }
+.aqi-table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 16px;
+}
+.aqi-table tr td:first-child { font-weight: 600; }
 
-/* Form container */
+/* ========================= CONTACT PAGE ========================= */
+.contact-container { padding: 40px 60px; text-align: center; }
 .contact-box {
     width: 40%;
     margin: auto;
@@ -215,184 +168,66 @@ nav ul li a.active {
     border-radius: 16px;
     box-shadow: 0px 6px 20px rgba(0,0,0,0.15);
 }
-
-/* Form labels */
-.contact-box label {
-    display: block;
-    margin-top: 15px;
-    text-align: left;
-}
-
-/* Input / textarea */
+.contact-box label { display: block; margin-top: 15px; text-align: left; }
 .contact-box input,
 .contact-box textarea {
-    width: 100%;
-    padding: 12px;
-    margin-top: 5px;
-    border: 1px solid #aaa;
-    border-radius: 8px;
-    font-size: 15px;
+    width: 100%; padding: 12px; margin-top: 5px;
+    border: 1px solid #aaa; border-radius: 8px;
 }
-
-.contact-box textarea {
-    height: 120px;
-    resize: none;
-}
-
-/* Send button */
+.contact-box textarea { height: 120px; resize: none; }
 .contact-box button {
     background-color: #1bb1e5;
     color: white;
     border: none;
     padding: 12px 30px;
-    font-size: 16px;
     border-radius: 8px;
     cursor: pointer;
-    margin-top: 20px;
     width: 100%;
 }
+.contact-box button:hover { background-color: #158fb9; }
 
-.contact-box button:hover {
-    background-color: #158fb9;
-}
-
-
-
-/* =========================================================
-   AQI TABLE SECTION
-   ========================================================= */
-
-.aqi-table-section {
-    width: 90%;
-    margin: 60px auto;
-    text-align: center;
-}
-
-.aqi-table-section h2 {
-    color: #1bb1e5;
-    margin-bottom: 20px;
-    font-size: 28px;
-}
-
-/* Table */
-.aqi-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 16px;
-    box-shadow: 0px 6px 20px rgba(0,0,0,0.15);
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.aqi-table td {
-    padding: 18px 15px;
-    text-align: left;
-    color: #333;
-}
-
-/* Row colors */
-.good { background-color: #9ae79a; }
-.moderate { background-color: #f7e97d; }
-.usg { background-color: #ffcc99; }
-.unhealthy { background-color: #ff7070; color: white; }
-.very-unhealthy { background-color: #b56bcc; color: white; }
-.hazardous { background-color: #8a3a3a; color: white; }
-
-/* First column bold */
-.aqi-table tr td:first-child {
-    font-weight: 600;
-}
-
-
-
-/* =========================================================
-   DASHBOARD PAGE
-   ========================================================= */
-
-/* ---------------- DASHBOARD PAGE ---------------- */
-
-.dashboard-container {
-    padding: 40px 60px;
-    text-align: center;
-}
-
-.dashboard-title {
-    font-size: 32px;
-    margin-bottom: 5px;
-}
-
-.dashboard-sub {
-    color: #444;
-    margin-bottom: 25px;
-}
-
-/* Location input */
+/* ========================= DASHBOARD ========================= */
+.dashboard-container { padding: 40px 60px; text-align: center; }
 .location-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
+    display: flex; justify-content: center;
+    align-items: center; gap: 12px;
     margin: 20px auto;
-    width: 100%;
 }
-
 .location-box input {
-    width: 350px;
-    padding: 12px 15px;
-    border-radius: 12px;
-    border: 1px solid #aaa;
+    width: 350px; padding: 12px 15px;
+    border-radius: 12px; border: 1px solid #aaa;
 }
-
 .location-box button {
     background-color: #1bb1e5;
-    color: white;
-    border: none;
-    padding: 10px 22px;
-    border-radius: 10px;
-    cursor: pointer;
+    color: white; border: none;
+    padding: 10px 22px; border-radius: 10px;
 }
 
-/* AQI cards */
 .aqi-cards {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 30px 0;
+    display: flex; justify-content: center;
+    gap: 20px; margin: 30px 0;
 }
-
 .aqi-card {
-    width: 22%;
-    background-color: white;
-    padding: 20px;
-    border-radius: 16px;
+    width: 22%; background-color: white;
+    padding: 20px; border-radius: 16px;
     box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
     text-align: center;
 }
+.aqi-card p { font-size: 24px; font-weight: bold; }
 
-.aqi-card p {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-/* Avg box */
 .avg-box {
-    width: 40%;
-    margin: 0 auto 40px auto;
+    width: 40%; margin: 0 auto 40px auto;
     background-color: white;
-    padding: 20px;
+    padding: 20px 0;
     border-radius: 16px;
     box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
 }
 
-/* Charts */
 .charts-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
+    display: flex; justify-content: center;
+    align-items: center; gap: 40px;
     margin-top: 30px;
 }
-
 .chart-box {
     width: 45%;
     background: white;
@@ -400,85 +235,153 @@ nav ul li a.active {
     border-radius: 12px;
     box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
 }
-
 .chart-box canvas {
     width: 100% !important;
     height: 250px !important;
 }
+
 .pdf-btn {
     background-color: #1bb1e5;
     color: white;
     border: none;
     padding: 12px 25px;
-    font-size: 16px;
     border-radius: 10px;
     cursor: pointer;
 }
+.pdf-btn:hover { background-color: #158fb9; }
 
-.pdf-btn:hover {
-    background-color: #158fb9;
-}
-/* =========================================================
-   RESPONSIVE DESIGN
-   ========================================================= */
-
+/* ========================= RESPONSIVE ========================= */
 @media (max-width: 768px) {
+    nav { flex-direction: column; gap: 10px; }
+    nav ul { flex-direction: column; gap: 15px; }
 
-    /* Navbar column */
-    nav {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
+    .about-boxes { flex-direction: column; }
+    .about-box { width: 90%; }
 
-    nav ul {
-        flex-direction: column;
-        gap: 15px;
-    }
+    .contact-box { width: 90%; }
 
-    /* Home */
-    .hero-box {
-        width: 80%;
-        padding: 20px;
-    }
+    .aqi-cards { flex-direction: column; }
+    .aqi-card { width: 80%; }
 
-    /* About */
-    .about-boxes {
-        flex-direction: column;
-        gap: 20px;
-    }
+    .avg-box { width: 90%; }
 
-    .about-box {
-        width: 90%;
-    }
+    .charts-row { flex-direction: column; gap: 20px; }
+    .chart-box { width: 90%; }
+}
 
-    /* Contact */
-    .contact-box {
-        width: 90%;
-    }
+/* ---------------------------------------------- DARK MODE STYLES ------------------------------------------------*/
 
-    /* Dashboard */
-    .aqi-cards {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
 
-    .aqi-card {
-        width: 80%;
-    }
+body.dark {
+    background-color: #0d1117;
+    color: white;
+}
 
-    .avg-box {
-        width: 90%;
-    }
+/* Navbar */
+body.dark nav {
+    background-color: #111827;
+    color: white;
+}
 
-    /* Charts stacked */
-    .charts-row {
-        flex-direction: column;
-        gap: 20px;
-    }
+body.dark nav ul li a {
+    color: #d1d5db;
+}
 
-    .chart-box {
-        width: 90%;
-    }
+body.dark nav ul li a.active {
+    color: #60a5fa;
+}
+
+body.dark .dark-toggle {
+    color: #60a5fa;
+}
+
+/* ===================== HOME PAGE ===================== */
+
+body.dark .hero-section-no-image {
+    background: #0d1117;
+}
+
+body.dark .hero-box {
+    background-color: #1f2937;
+    color: white;
+    box-shadow: 0 0 15px rgba(255,255,255,0.05);
+}
+
+body.dark .hero-box h1 {
+    color: #60a5fa;
+}
+
+body.dark .hero-box p {
+    color: #cbd5e1;
+}
+
+body.dark .hero-box button {
+    background-color: #1bb1e5;
+    color: white;
+}
+
+body.dark .hero-box button:hover {
+    background-color: #1596be;
+}
+
+/* ===================== ABOUT PAGE ===================== */
+
+body.dark .about-box {
+    background-color: #1f2937;
+    color: #e5e7eb;
+    box-shadow: 0 0 12px rgba(255,255,255,0.05);
+}
+
+body.dark .extra-section {
+    background-color: #1f2937;
+    color: #e5e7eb;
+}
+
+/* ===================== AQI TABLE ===================== */
+
+body.dark .aqi-table {
+    background: #1f2937;
+    color: white;
+}
+
+body.dark .aqi-table td {
+    color: white;
+    border-color: #333;
+}
+
+body.dark .aqi-table-wrapper h2 {
+    color: #60a5fa;
+}
+
+/* ===================== CONTACT PAGE ===================== */
+
+body.dark .contact-box {
+    background-color: #1f2937;
+    color: white;
+}
+
+body.dark .contact-box input,
+body.dark .contact-box textarea {
+    background-color: #111827;
+    border-color: #374151;
+    color: white;
+}
+
+/* ===================== DASHBOARD ===================== */
+
+body.dark .aqi-card,
+body.dark .avg-box,
+body.dark .chart-box {
+    background-color: #1f2937;
+    color: white;
+}
+
+body.dark .location-box input {
+    background: #111827;
+    color: white;
+    border-color: #374151;
+}
+
+body.dark .dashboard-title {
+    color: #60a5fa;
 }

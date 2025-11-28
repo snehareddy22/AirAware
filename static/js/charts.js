@@ -1,6 +1,6 @@
 // =======================================================
 // AirAware - Chart + AQI Prediction JavaScript
-// Works with your ML Flask backend
+// Fully Syncs with Flask Backend + PDF Generator
 // =======================================================
 
 // -----------------------------
@@ -28,9 +28,20 @@ async function predictAQI() {
     // UPDATE PRESENT VALUES
     // -----------------------------
     document.getElementById("pm25").innerText = data.pm25;
-    document.getElementById("co2").innerText = data.co2;
+    document.getElementById("co2").innerText = data.co;   // FIXED
     document.getElementById("no2").innerText = data.no2;
     document.getElementById("aqi").innerText = data.aqi;
+
+    // -----------------------------
+    // SAVE VALUES FOR PDF DOWNLOAD
+    // -----------------------------
+    window.latestAQI = {
+        pm25: data.pm25,
+        co: data.co,
+        no2: data.no2,
+        aqi: data.aqi,
+        location: location
+    };
 
     // -----------------------------
     // UPDATE LAST YEAR AVERAGES
@@ -58,7 +69,7 @@ async function predictAQI() {
 
 
 // =======================================================
-// 2. EMPTY CHARTS - LOADED BEFORE ANY PREDICTION
+// 2. EMPTY CHARTS (Loaded before prediction)
 // =======================================================
 
 // LINE CHART
@@ -67,7 +78,7 @@ const lineCtx = document.getElementById("lineChart");
 var lineChart = new Chart(lineCtx, {
     type: "line",
     data: {
-        labels: [],   // filled after prediction
+        labels: [],
         datasets: [
             {
                 label: "PM2.5",
