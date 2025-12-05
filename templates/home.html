@@ -3,42 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>AirAware - Home</title>
-    <!-- Google Font -->
+    <!-- Google Font for smooth UI -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- Link your CSS -->
+    <!-- Main CSS file -->
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
+    <!-- Navbar: logo + menu + dark mode button -->
     <nav>
-    <h2>AirAware</h2>
-
-    <div class="nav-right">
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/dashboard">Dashboard</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
-
-        <!-- dark-mode button RIGHT side -->
-        <button id="darkModeBtn" class="dark-toggle">🌙</button>
+        <h2>AirAware</h2>
+        <div class="nav-right">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+            <!-- Button to switch dark mode -->
+            <button id="darkModeBtn" class="dark-toggle">🌙</button>
+        </div>
+    </nav>
+    <!-- Main welcome section -->
+    <div class="hero-section-no-image">
+        <div class="hero-box">
+            <h1>Welcome to AirAware</h1>
+            <p>Your smart air quality prediction system.</p>
+            <!-- Goes to dashboard page -->
+            <a href="/dashboard">
+                <button>Predict Now</button>
+            </a>
+        </div>
     </div>
-</nav>
-
-
-    <!-- NAVBAR END -->
-    <!-- HERO SECTION START -->
-   <div class="hero-section-no-image">
-    <div class="hero-box">
-        <h1>Welcome to AirAware</h1>
-        <p>Your smart air quality prediction system.</p>
-        <a href="/dashboard">
-            <button>Predict Now</button>
-        </a>
-    </div>
-</div>
-
-    <!-- HERO SECTION END -->
+    <!-- Dark mode script -->
     <script src="/static/js/script.js"></script>
 </body>
 </html>

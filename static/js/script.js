@@ -1,47 +1,34 @@
-// Enable smooth scrolling for the whole page
+// Smooth scrolling for all pages
 document.documentElement.style.scrollBehavior = "smooth";
 
-// Highlight the active navbar link
+// Highlight the current navbar link
 const navLinks = document.querySelectorAll("nav ul li a");
-
 navLinks.forEach(link => {
     if (link.href === window.location.href) {
         link.classList.add("active");
     }
 });
 
-// Select all about-page boxes for animation
-const aboutBoxes = document.querySelectorAll(".about-box");
+// ---------------- DARK MODE TOGGLE ----------------
 
-// Fade-in animation while scrolling
-window.addEventListener("scroll", () => {
-    aboutBoxes.forEach(box => {
-        let position = box.getBoundingClientRect().top;
-        let screenHeight = window.innerHeight;
-
-        if (position < screenHeight - 100) {
-            box.style.opacity = "1";
-            box.style.transform = "translateY(0)";
-        }
-    });
-});
-// --------------------- DARK MODE -----------------------
+// Button that switches between modes
 const darkBtn = document.getElementById("darkModeBtn");
 
+// When the button is clicked → change theme
 darkBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark");
 
-    // change icon
+    // Change icon based on theme
     if (document.body.classList.contains("dark")) {
-        darkBtn.textContent = "☀️";
+        darkBtn.textContent = "☀️";   // light mode icon
         localStorage.setItem("mode", "dark");
     } else {
-        darkBtn.textContent = "🌙";
+        darkBtn.textContent = "🌙";   // dark mode icon
         localStorage.setItem("mode", "light");
     }
 });
 
-// keep mode after refresh
+// Keep user’s theme saved after refresh
 if (localStorage.getItem("mode") === "dark") {
     document.body.classList.add("dark");
     darkBtn.textContent = "☀️";

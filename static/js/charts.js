@@ -1,21 +1,17 @@
-// =======================================================
 // AirAware - Chart + AQI Prediction JavaScript
-// Fully Syncs with Flask Backend + PDF Generator
-// =======================================================
+// Talks to Flask backend and updates charts + PDF data
 
-// -----------------------------
-// 1. SEND LOCATION TO BACKEND
-// -----------------------------
+// 1. Send location to backend and update dashboard
 async function predictAQI() {
-
     const location = document.getElementById("locationInput").value;
 
+    // Stop if user leaves input empty
     if (!location) {
         alert("Please enter a location!");
         return;
     }
 
-    // Send request to Flask backend
+    // Call Flask /predict route
     const response = await fetch("/predict", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -24,17 +20,13 @@ async function predictAQI() {
 
     const data = await response.json();
 
-    // -----------------------------
-    // UPDATE PRESENT VALUES
-    // -----------------------------
+    // Show current values in the four cards
     document.getElementById("pm25").innerText = data.pm25;
-    document.getElementById("co2").innerText = data.co;   // FIXED
+    document.getElementById("co2").innerText = data.co;   
     document.getElementById("no2").innerText = data.no2;
     document.getElementById("aqi").innerText = data.aqi;
 
-    // -----------------------------
-    // SAVE VALUES FOR PDF DOWNLOAD
-    // -----------------------------
+    // Store latest values so PDF download can use them
     window.latestAQI = {
         pm25: data.pm25,
         co: data.co,
@@ -43,42 +35,31 @@ async function predictAQI() {
         location: location
     };
 
-    // -----------------------------
-    // UPDATE LAST YEAR AVERAGES
-    // -----------------------------
+    // Update last year average box
     document.getElementById("avg-pm25").innerText = `PM2.5: ${data.avg_pm25}`;
     document.getElementById("avg-co2").innerText = `CO₂: ${data.avg_co2}`;
     document.getElementById("avg-no2").innerText = `NO₂: ${data.avg_no2}`;
 
-    // -----------------------------
-    // UPDATE LINE CHART
-    // -----------------------------
+    // Update line chart data (PM2.5, CO2, NO2 over years)
     lineChart.data.labels = data.chart_years;
     lineChart.data.datasets[0].data = data.chart_pm25;
     lineChart.data.datasets[1].data = data.chart_co2;
     lineChart.data.datasets[2].data = data.chart_no2;
     lineChart.update();
 
-    // -----------------------------
-    // UPDATE BAR CHART
-    // -----------------------------
+    // Update bar chart data (AQI now, 1 year, 5 years)
     barChart.data.datasets[0].data = data.aqi_bar;
     barChart.update();
 }
 
+// 2. Create empty charts when page loads
 
-
-// =======================================================
-// 2. EMPTY CHARTS (Loaded before prediction)
-// =======================================================
-
-// LINE CHART
+// Line chart (trend)
 const lineCtx = document.getElementById("lineChart");
-
 var lineChart = new Chart(lineCtx, {
     type: "line",
     data: {
-        labels: [],
+        labels: [],   // years will come from backend
         datasets: [
             {
                 label: "PM2.5",
@@ -102,10 +83,8 @@ var lineChart = new Chart(lineCtx, {
     }
 });
 
-
-// BAR CHART
+// Bar chart (AQI comparison)
 const barCtx = document.getElementById("barChart");
-
 var barChart = new Chart(barCtx, {
     type: "bar",
     data: {
