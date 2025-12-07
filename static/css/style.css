@@ -273,6 +273,27 @@ nav ul li a.active { text-decoration: underline; }
     .chart-box { width: 90%; }
 }
 
+/* Success Popup Message */
+.popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #1bb1e5;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    animation: fadeOut 3s forwards;
+    z-index: 9999;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-10px); }
+}
+
 /* ========================= DARK MODE ========================= */
 body.dark { background-color: #0d1117; color: white; }
 
@@ -334,3 +355,4 @@ body.dark .location-box input {
 }
 
 body.dark .dashboard-title { color: #60a5fa; }
+
